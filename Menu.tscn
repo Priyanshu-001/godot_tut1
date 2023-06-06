@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/flappyfont.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://PlayButton.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+
+[node name="Menu" type="CanvasLayer"]
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = -2.0
+margin_top = 250.0
+margin_right = 484.0
+margin_bottom = 372.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+icon = SubResource( 2 )
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
